@@ -22,3 +22,5 @@ meteor add launch-screen
 meteor npm install angular-meteor --save
 
 meteor npm install angular-ecmascript --save
+
+meteor npm install moment --save
