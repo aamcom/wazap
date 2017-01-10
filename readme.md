@@ -18,24 +18,20 @@ meteor npm install babel-runtime --save
 meteor add mobile-status-bar
 meteor add launch-screen
 
-
 meteor npm install angular-meteor --save
-
 meteor npm install angular-ecmascript --save
-
 meteor npm install moment --save
-
 meteor add fourseven:scss
-
 meteor npm install angular-moment --save
-
 meteor add check
-
 meteor add npm-bcrypt@0.8.7
-
 meteor add mys:accounts-phone
+meteor npm install angular-meteor-auth
+
+----
+DOC+
+----
 >If you would like to test the verification with a real phone number, 
 >accouts-phone provides an easy access for twilio's API, (https://www.twilio.com/)
 >for more information see accounts-phone's repo. (https://github.com/okland/accounts-phone)
-
-meteor npm install angular-meteor-auth
+----
