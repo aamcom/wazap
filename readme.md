@@ -26,3 +26,7 @@ meteor npm install angular-ecmascript --save
 meteor npm install moment --save
 
 meteor add fourseven:scss
+
+meteor npm install angular-moment --save
+
+meteor add check
