@@ -15,7 +15,6 @@ class RoutesConfig extends Config {
  
     this.isAuthorized = ['$auth', this.isAuthorized.bind(this)];
   }
-  
   configure() {
     this.$stateProvider
       .state('tab', {
