@@ -17,7 +17,9 @@ export default class ChatsCtrl extends Controller {
   }
 
   remove(chat) {
-    Chats.remove(chat._id);
+    //Chats.remove(chat._id);
+    //remplacement par une methode coté serveur
+    this.callMethod('removeChat', chat._id);
   }
 
 }
