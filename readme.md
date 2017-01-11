@@ -28,6 +28,10 @@ meteor add npm-bcrypt@0.8.7
 meteor add mys:accounts-phone
 meteor npm install angular-meteor-auth
 
+meteor remove insecure
+meteor remove autopublish
+meteor add reywood:publish-composite
+
 ----
 DOC+
 ----
