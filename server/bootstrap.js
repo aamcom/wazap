@@ -1,66 +1,31 @@
-import Moment from 'moment';
+
 import { Meteor } from 'meteor/meteor';
-import { Chats, Messages } from '../lib/collections';
+import { Accounts } from 'meteor/accounts-base';
  
 Meteor.startup(function() {
-   if (Chats.find().count() !== 0) return;
+   if (Meteor.users.find().count() != 0) return;
  
-  Messages.remove({});
- 
-  const messages = [
-    {
-      text: 'You on your way?',
-      timestamp: Moment().subtract(1, 'hours').toDate()
-    },
-    {
-      text: 'Hey, it\'s me',
-      timestamp: Moment().subtract(10, 'hours').toDate()
-    },
-    {
-      text: 'I should buy a bateau',
-      timestamp: Moment().subtract(1, 'days').toDate()
-    },
-    {
-      text: 'regardes qui vient d"arriver chez moi!',
-      timestamp: Moment().subtract(4, 'days').toDate()
-    },
-    {
-      text: 'This is wicked good ice cream.',
-      timestamp: Moment().subtract(2, 'weeks').toDate()
+  Accounts.createUserWithPhone({
+    phone: '+33611223344',
+    profile: {
+      name: 'Andy',
+      picture: 'silhouette2.png'
     }
-  ];
- 
-  messages.forEach((m) => {
-    Messages.insert(m);
   });
  
-  const chats = [
-    {
-      name: 'Ethan Gonzalez',
-      picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
-    },
-    {
-      name: 'Bryan Wallace',
-      picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg'
-    },
-    {
-      name: 'Avery Stewart',
-      picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg'
-    },
-    {
-      name: 'Katie Peterson',
-      picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg'
-    },
-    {
-      name: 'Ray Edwards',
-      picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
+  Accounts.createUserWithPhone({
+    phone: '+33610203040',
+    profile: {
+      name: 'Caroline',
+      picture: 'silhouette1.png'
     }
-  ];
+  });
  
-  chats.forEach((chat) => {
-    const message = Messages.findOne({ chatId: { $exists: false } });
-    chat.lastMessage = message;
-    const chatId = Chats.insert(chat);
-    Messages.update(message._id, { $set: { chatId } });
+  Accounts.createUserWithPhone({
+    phone: '+33637977717',
+    profile: {
+      name: 'Andrew',
+      picture: 'silhouette2.png'
+    }
   });
 });
